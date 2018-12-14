@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/model/User.dart';
 import 'package:flutter_app/ui/HomePage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -68,5 +69,8 @@ class LoginState extends State<LoginPage> {
       textColor: Colors.white,
       gravity: ToastGravity.BOTTOM,
     );
+  }
+  User _login() {
+    return new User("", 1, 25, "", "");
   }
 }
