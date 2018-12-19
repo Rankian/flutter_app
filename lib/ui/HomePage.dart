@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/DiscoverPage.dart';
 import 'package:flutter_app/pages/ImprintPage.dart';
-import 'package:flutter_app/pages/MainPage.dart';
+import 'package:flutter_app/pages/main/MainPage.dart';
 import 'package:flutter_app/pages/PersonalPage.dart';
 import 'package:flutter_app/ui/WalletPage.dart';
 import 'package:amap_location/amap_location.dart';

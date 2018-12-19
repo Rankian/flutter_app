@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/model/User.dart';
+import 'dart:convert';
 
 class PersonalPage extends StatefulWidget{
   @override
@@ -6,6 +8,9 @@ class PersonalPage extends StatefulWidget{
 }
 
 class PersonalState extends State<PersonalPage>{
+
+  User _user;
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -13,5 +18,10 @@ class PersonalState extends State<PersonalPage>{
         child: new Text("我的"),
       ),
     );
+  }
+
+  void _initUser(){
+    String jsonData = "";
+    _user = User.fromJSON(json.decode(jsonData));
   }
 }

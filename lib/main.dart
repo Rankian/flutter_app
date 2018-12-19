@@ -10,7 +10,7 @@ import 'package:amap_location/amap_location.dart';
 void main() {
   AMapLocationClient.setApiKey("ea21d8327a3b3a9494853615ea0e65c7");
   runApp(new MaterialApp(
-    home: new LoginPage(),
+    home: new HomePage(),
   ));
   if (Platform.isAndroid) {
     SystemUiOverlayStyle overlayStyle =

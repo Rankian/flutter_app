@@ -44,7 +44,7 @@ class LoginState extends State<LoginPage> {
                           Navigator.of(context).pushAndRemoveUntil(
                               new MaterialPageRoute(
                                   builder: (context) => new HomePage()),
-                              (route) => route == null);
+                                  (route) => route == null);
                         },
                         child: new Padding(
                           padding: const EdgeInsets.all(10.0),
@@ -53,12 +53,14 @@ class LoginState extends State<LoginPage> {
                             style: new TextStyle(
                                 color: Colors.white, fontSize: 16.0),
                           ),
-                        )),
+                        )
+                    ),
                   ),
                 )
               ],
             ),
-          )),
+          )
+      ),
     );
   }
 
