@@ -17,7 +17,6 @@ class Today{
   String travel_index;
   String exercise_index;
 
-
   Today(this.city, this.date_y, this.week, this.temperature, this.weather,
       this.wind, this.dressing_index, this.dressing_advice, this.uv_index,
       this.comfort_index, this.wash_index, this.travel_index,
