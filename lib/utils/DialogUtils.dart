@@ -9,8 +9,7 @@ class DialogUtils {
       return new LoadingDialog(
         text: "正在加载",
       );
-    }
-    );
+    });
   }
 
 }

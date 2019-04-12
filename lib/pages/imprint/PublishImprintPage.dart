@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:image_picker/image_picker.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/Imprint/Imprint.dart';
@@ -100,9 +99,9 @@ class PublishState extends State<PublishImprintPage> {
   }
 
   Future getImage() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.gallery, maxHeight: 80, maxWidth: 80);
-    setState(() {
-      selectPicFile = image;
-    });
+//    var image = await ImagePicker.pickImage(source: ImageSource.gallery, maxHeight: 80, maxWidth: 80);
+//    setState(() {
+//      selectPicFile = image;
+//    });
   }
 }

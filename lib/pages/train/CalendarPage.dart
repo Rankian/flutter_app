@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_calendar_carousel/classes/event.dart';
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart';
 import 'package:common_utils/common_utils.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class CalendarPage extends StatefulWidget {
   @override
@@ -60,11 +59,6 @@ class CalendarState extends State<CalendarPage>{
   }
 
   void _showToast(String msg) {
-    Fluttertoast.showToast(
-      msg: msg,
-      textColor: Colors.white,
-      gravity: ToastGravity.BOTTOM,
-    );
   }
   
 }

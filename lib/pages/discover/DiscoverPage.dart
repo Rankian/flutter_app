@@ -36,6 +36,7 @@ class DiscoverState extends State<DiscoverPage>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return new Scaffold(
         body: new Container(
       child: new Stack(

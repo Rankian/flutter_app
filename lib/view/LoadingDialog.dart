@@ -7,24 +7,36 @@ class LoadingDialog extends Dialog {
 
   @override
   Widget build(BuildContext context) {
-    return new Material(
-      type: MaterialType.transparency,
-      child: new Center(
+    return new Material( //创建透明层
+      type: MaterialType.transparency, //透明类型
+      child: new Center( //保证控件居中效果
         child: new SizedBox(
-          width: 130,
-          height: 130,
+          width: 120.0,
+          height: 120.0,
           child: new Container(
             decoration: ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)))),
-            color: Color(0x00000000),
+              color: Color(0xffffffff),
+
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(8.0),
+                ),
+              ),
+            ),
             child: new Column(
-              mainAxisAlignment:  MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                new CircularProgressIndicator(),
-                new Padding(padding: EdgeInsets.only(top: 20.0)),
-                new Text(text, style: new TextStyle(color: Colors.white, fontSize: 12.0),)
+                new CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Color(0xff1AC8EE)),),
+                new Padding(
+                  padding: const EdgeInsets.only(
+                    top: 20.0,
+                  ),
+                  child: new Text(
+                    text,
+                    style: new TextStyle(fontSize: 12.0),
+                  ),
+                ),
               ],
             ),
           ),

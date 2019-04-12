@@ -61,7 +61,7 @@ class TrainTicketState extends State<TrainTicketPage>{
                                 print("选择日期:$result");
                                 setState(() {
                                   departureDateShow = DateUtil.formatZHDateTime(result, DateFormat.ZH_MONTH_DAY, ":");
-                                  departureDate = DateUtil.formatDateTime(result, DateFormat.YEAR_MONTH_DAY, "-",":");;
+                                  departureDate = DateUtil.formatDateTime(result, DateFormat.YEAR_MONTH_DAY, "-",":");
                                 });
                               });
                             },

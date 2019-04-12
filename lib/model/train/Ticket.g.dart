@@ -25,6 +25,7 @@ Ticket _$TicketFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$TicketToJson(Ticket instance) => <String, dynamic>{
       'trainNum': instance.trainNum,
+      'trainType': instance.trainType,
       'trainTypeName': instance.trainTypeName,
       'departStationName': instance.departStationName,
       'destStationName': instance.destStationName,

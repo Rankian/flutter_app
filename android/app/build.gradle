@@ -25,7 +25,7 @@ apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     lintOptions {
         disable 'InvalidPackage'
@@ -33,50 +33,29 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.sanjie.flutterapp"
+        applicationId "com.example.flutter_app"
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-        manifestPlaceholders = [
-                AMAP_KEY: "ea21d8327a3b3a9494853615ea0e65c7", /// 高德地图key
-        ]
     }
 
     buildTypes {
-        debug {
-            signingConfig signingConfigs.debug
-        }
         release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
-
-        }
-
-        signingConfigs {
-            debug {
-                keyAlias 'sanjie'
-                keyPassword 'langsanjie'
-                storeFile file('../SanJie_Lang.jks')
-                storePassword 'langsanjie'
-            }
-        }
-
-        flutter {
-            source '../..'
-        }
-
-        dependencies {
-            testImplementation 'junit:junit:4.12'
-            androidTestImplementation 'com.android.support.test:runner:1.0.2'
-            androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
         }
     }
+}
 
-    //添加如下配置就ok了
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
+flutter {
+    source '../..'
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

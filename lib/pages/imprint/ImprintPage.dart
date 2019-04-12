@@ -40,6 +40,7 @@ class ImprintState extends State<ImprintPage> with AutomaticKeepAliveClientMixin
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return new Scaffold(
       body: Column(
         children: <Widget>[
