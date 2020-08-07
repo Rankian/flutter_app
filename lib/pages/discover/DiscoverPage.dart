@@ -75,13 +75,7 @@ class DiscoverState extends State<DiscoverPage>
                                             child: new Text(
                                               weather == null
                                                   ? "定位中"
-                                                  : weatherAddress +
-                                                  "    " +
-                                                  DateUtil.formatZHDateTime(
-                                                      weather.realtime.time,
-                                                      DateFormat
-                                                          .ZH_YEAR_MONTH_DAY,
-                                                      ":"),
+                                                  : weatherAddress,
                                               style: new TextStyle(
                                                   fontSize: 14.0,
                                                   color: Colors.white),

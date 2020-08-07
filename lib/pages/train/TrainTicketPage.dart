@@ -14,8 +14,8 @@ class TrainTicketState extends State<TrainTicketPage>{
   bool _isStudentTicket = false;
   bool _isChangeTrain = false;
 
-  String departureDateShow = DateUtil.formatZHDateTime(DateTime.now().toString(), DateFormat.ZH_MONTH_DAY, ":");
-  String departureDate = DateUtil.formatDateTime(DateTime.now().toString(), DateFormat.YEAR_MONTH_DAY, "-",":");
+  String departureDateShow = DateUtil.formatDateStr(DateTime.now().toString());
+  String departureDate = DateUtil.formatDateStr(DateTime.now().toString());
 
   @override
   Widget build(BuildContext context) {
@@ -60,8 +60,8 @@ class TrainTicketState extends State<TrainTicketPage>{
                               })).then((String result){
                                 print("选择日期:$result");
                                 setState(() {
-                                  departureDateShow = DateUtil.formatZHDateTime(result, DateFormat.ZH_MONTH_DAY, ":");
-                                  departureDate = DateUtil.formatDateTime(result, DateFormat.YEAR_MONTH_DAY, "-",":");
+                                  departureDateShow = DateUtil.formatDateStr(result);
+                                  departureDate = DateUtil.formatDateStr(result);
                                 });
                               });
                             },

@@ -10,7 +10,7 @@ class DioUtils {
 
   static void _initDio({String contentType = 'application/json'}) {
     print("contentType:$contentType");
-    Options options = new Options();
+    BaseOptions options = new BaseOptions();
     options.baseUrl = "https://api2.bmob.cn";
     options.connectTimeout = 30000;
     options.receiveTimeout = 30000;
@@ -22,18 +22,20 @@ class DioUtils {
     options.headers = header;
 
     _dio = new Dio(options);
-    _dio.interceptor.request.onSend = (Options options) {
-      print("Dio：请求中, ${options.path}, ${options.contentType},${options.data.toString()}");
-      return options;
-    };
-    _dio.interceptor.response.onSuccess = (Response response) {
+    _dio.interceptors.add(InterceptorsWrapper(
+      onRequest: (RequestOptions options) async {
+        print("Dio：请求中, ${options.path}, ${options.contentType},${options.data.toString()}");
+        return options;
+    },
+    onResponse: (Response response) {
       print("Dio：请求成功：${json.encode(response.data)}");
-      return response;
-    };
-    _dio.interceptor.response.onError = (DioError error) {
-      print("Dio：请求失败:${error.response.statusCode},${error.message}");
-      return error;
-    };
+        return response;
+    },
+      onError: (DioError error){
+        print("Dio：请求失败:${error.response.statusCode},${error.message}");
+        return error;
+      }
+    ));
   }
 
   static Dio get({String contentType = 'application/json'}) {
@@ -43,7 +45,7 @@ class DioUtils {
 
   static Future<Response> download(String urlPath, String savePath) async {
     _dio = new Dio();
-    Response response = await _dio.download(urlPath, savePath, onProgress: (int received, int total) {
+    Response response = await _dio.download(urlPath, savePath, onReceiveProgress: (int received, int total) {
       var percent = received.toDouble() / total.toDouble();
       print("下载中：${(percent * 100).toStringAsFixed(0)}%");
       if(percent == 1){

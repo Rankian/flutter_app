@@ -24,7 +24,7 @@ class ImprintState extends State<ImprintPage> with AutomaticKeepAliveClientMixin
   bool get wantKeepAlive => true;
 
   void _initDio() {
-    Options options = new Options();
+    BaseOptions options = new BaseOptions();
     options.baseUrl = "https://api2.bmob.cn";
     options.connectTimeout = 5000;
     options.receiveTimeout = 5000;

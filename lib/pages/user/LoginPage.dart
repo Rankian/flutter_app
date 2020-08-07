@@ -133,7 +133,7 @@ class LoginState extends BaseState<LoginPage> {
   }
 
   Future login(String username, String password) async {
-    Response response = await DioUtils.get().get("/1/login", data: {'username': username, 'password': hex.encode(md5.convert(Utf8Encoder().convert(password)).bytes)});
+    Response response = await DioUtils.get().get("/1/login", queryParameters: {'username': username, 'password': hex.encode(md5.convert(Utf8Encoder().convert(password)).bytes)});
     if(response.statusCode == 200){
         ACache.saveString("user", jsonEncode(response.data)).then((success){
           print("保存：$success");

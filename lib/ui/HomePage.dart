@@ -56,10 +56,7 @@ class _HomePageState extends BaseState<HomePage>
             items: <BottomNavigationBarItem>[
               new BottomNavigationBarItem(
                   icon: Icon(Icons.home),
-                  title: Text(
-                    "首页",
-                    style: TextStyle(fontSize: 12),
-                  )),
+                  title: Text("首页", style: TextStyle(fontSize: 12),)),
               new BottomNavigationBarItem(
                   icon: new Icon(Icons.stars),
                   title: new Text("发现", style: TextStyle(fontSize: 12))),

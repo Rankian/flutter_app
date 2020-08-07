@@ -27,8 +27,8 @@ class CalendarState extends State<CalendarPage>{
         actions: <Widget>[
           GestureDetector(child: Center(child: Padding(padding: EdgeInsets.only(right: 15), child: Text("确定", style: TextStyle(color: Colors.white, fontSize: 18.0),),),),
           onTap: (){
-            int time = DateUtil.getDateMsByTimeStr(DateUtil.formatDateTime(_currentDate.toString(), DateFormat.YEAR_MONTH_DAY, "-", ":"));
-            int today = DateUtil.getDateMsByTimeStr(DateUtil.formatDateTime(DateTime.now().toString(), DateFormat.YEAR_MONTH_DAY, "-", ":"));
+            int time = DateUtil.getDateMsByTimeStr(DateUtil.formatDateStr(_currentDate.toString()));
+            int today = DateUtil.getDateMsByTimeStr(DateUtil.formatDateStr(DateTime.now().toString()));
             if(time < today){
               _showToast("请选择今天或以后的日期");
             }else if(time - today > 28 * 24 * 60 * 60 * 1000){
